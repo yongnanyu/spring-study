@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+    <!--通过无参构造创建对象-->
+<!--    <bean id = "userDao" class="org.example.POI.UserDaoImpl"/>-->
+    <import resource="dependency-lookup-context.xml" />
+
+    <bean id="userRepository" class="com.yyn.spring.ioc.overview.repository.UserRepository"
+     autowire="byType"> <!-- auto wiring-->
+       <!-- 手动配置 -->
+<!--        <property name="users">-->
+<!--            <util:list>-->
+<!--                <ref bean="user"/>-->
+<!--                <ref bean="superUser"/>-->
+<!--            </util:list>-->
+<!--        </property>-->
+        <!-- 手动配置 -->
+    </bean>
+</beans>
